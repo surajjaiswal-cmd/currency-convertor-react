@@ -1,0 +1,1 @@
+I am trying to make this converter unique. I have used a proper folder structure and Axios to call the API, along with React Query to fetch data from Axios. Additionally, I have used Redux Toolkit to avoid prop drilling and make the code easy to understand.

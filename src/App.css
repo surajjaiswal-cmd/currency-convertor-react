@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: poppins;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  background-image: url(bgimg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  block-size: 100%;
+}
+
+.main-box-folder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-box {
+  background-color: #ffffffe1;
+  width: 30%;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.dropdown {
+  height: 2rem;
+  background-color: #ffffff;
+  font-size: .8rem;
+  border-radius: .4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0rem 0rem .9rem rgba(168, 166, 166, 0.489);
+}
+
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.country-img-name {
+  width: 70%;
+  height: 1.7rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  border-radius: .3rem;
+  box-shadow: 0rem 0rem .9rem rgba(168, 166, 166, 0.489);
+}
+
+.country-img-name img {
+  width: 1.9rem;
+  height: auto;
+
+
+}
+
+.from-input,
+.to-input {
+  border: none;
+  outline: none;
+  margin-left: 1.3rem;
+  margin: 0 auto;
+  width: 95%;
+  font-size: 1rem;
+}
+
+.fromopt {
+  border: none;
+  outline: none;
+  margin-right: .5rem;
+  margin-left: .5rem;
+  width: 70%;
+  font-size: .8rem;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.update-at {
+  font-size: .6rem;
+  text-align: center;
+}
+
+.final {
+  font-size: .9rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.more-about {
+  font-size: .8rem;
+  text-decoration: none;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0rem 0rem .9rem rgba(168, 166, 166, 0.489);
+  padding: .2rem 0;
+  margin: .5rem 0 -1rem 0;
+}
+
+
+.footer {
+  color: #ffffff3e;
+  font-size: .7rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+@media(max-width: 1200px) {
+  .main-box {
+    width: 40%;
+  }
+
+  .healding {
+    transform: translateY(-2rem);
+  }
+}
+
+@media(max-width: 992px) {
+  .main-box {
+    width: 45%;
+  }
+
+}
+
+@media(max-width: 768px) {
+  .main-box {
+    width: 60%;
+  }
+
+  .healding {
+    transform: translateY(-3rem) translateX(1rem);
+  }
+}
+
+@media(max-width: 576px) {
+  .main-box {
+    width: 90%;
+  }
+}
