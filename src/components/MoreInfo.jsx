@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import DateAndTime from "./DateAndTime";
 import { useSelector } from "react-redux";
+import CurrencyList from "../api/CurrencyList.json";
+
 const MoreInfo = ({ data }) => {
   const [time, setTime] = useState("");
   const from = useSelector((state) => state.from);
@@ -22,11 +24,12 @@ const MoreInfo = ({ data }) => {
           <b>
             <span className="final-from-price">{from}</span>
           </b>
-          <span className="final-from"> United State Doller </span> equals
+          <span className="final-from"> {CurrencyList[fromCurrency]} </span>{" "}
+          equals
           <b>
             <span className="final-to-price"> {to} </span>
           </b>
-          <span className="final-to"> India Rupee </span>
+          <span className="final-to"> {CurrencyList[toCurrency]} </span>
         </p>
       </div>
       <a
