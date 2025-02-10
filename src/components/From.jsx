@@ -14,21 +14,24 @@ const From = ({ data }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    convertFromTo(from);
-  }, [data, fromCurrency, toCurrency, from]);
+    if (from !== "") {
+      convertFromTo(from);
+    }
+  }, [data, fromCurrency, toCurrency]);
 
   const convertFromTo = (value) => {
     let fromRate = data.rates[fromCurrency];
     let toRate = data.rates[toCurrency];
-    let converted = ((toRate / fromRate) * value || from).toFixed(2);
+    let converted = ((toRate / fromRate) * (value || from)).toFixed(2);
     dispatch(setToInput(converted));
   };
   const handelFromInputChange = (e) => {
     let { value } = e.target;
-    if (value <= 0) {
-      value = 1;
-    }
     dispatch(setFromInput(value));
+    if (value === "") {
+      dispatch(setToInput(value));
+      return;
+    }
     convertFromTo(value);
   };
   return (
@@ -38,7 +41,7 @@ const From = ({ data }) => {
         <div className="country-img-name">
           <img
             src={`https://flagsapi.com/${CountryCodes[fromCurrency]}/flat/64.png`}
-            alt={`${toCurrency}`}
+            alt={`${fromCurrency}`}
           />
           <select
             className="fromopt"

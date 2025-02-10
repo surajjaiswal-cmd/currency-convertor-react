@@ -12,28 +12,32 @@ const To = ({ data }) => {
 
   const dispatch = useDispatch();
 
-  const converteToFrom = (value) => {
+  const convertToFrom = (value) => {
     let fromRate = data.rates[fromCurrency];
     let toRate = data.rates[toCurrency];
     let converted = ((fromRate / toRate) * value).toFixed(2);
     dispatch(setFromInput(converted));
   };
-  const handelToInputChange = (e) => {
+
+  const handleToInputChange = (e) => {
     let { value } = e.target;
-    if (value <= 0) {
-      value = 1;
+    if (value === "") {
+      dispatch(setToInput(""));
+      dispatch(setFromInput(""));
+      return;
     }
     dispatch(setToInput(value));
-    converteToFrom(value);
+    convertToFrom(value);
   };
+
   return (
     <>
-      <div className="d-flex justify-content-between ">
+      <div className="d-flex justify-content-between">
         <h6>To</h6>
         <div className="country-img-name">
           <img
             src={`https://flagsapi.com/${CountryCodes[toCurrency]}/flat/64.png`}
-            alt={`${fromCurrency}`}
+            alt={`${toCurrency}`}
           />
           <select
             name="to-select"
@@ -50,10 +54,11 @@ const To = ({ data }) => {
           type="number"
           className="to-input"
           value={to}
-          onChange={(e) => handelToInputChange(e)}
+          onChange={(e) => handleToInputChange(e)}
         />
       </div>
     </>
   );
 };
+
 export default To;

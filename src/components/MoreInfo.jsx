@@ -25,7 +25,7 @@ const MoreInfo = ({ data }) => {
             <span className="final-from-price">{from}</span>
           </b>
           <span className="final-from"> {CurrencyList[fromCurrency]} </span>{" "}
-          equals
+        <b>=</b>
           <b>
             <span className="final-to-price"> {to} </span>
           </b>
